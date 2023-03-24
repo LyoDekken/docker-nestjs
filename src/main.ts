@@ -44,9 +44,9 @@ async function bootstrap() {
 
   // Swagger Documentation
   const config = new DocumentBuilder()
-    .setTitle('Project Docker CRUD with nestjs')
+    .setTitle('Project Singer OmadTech-aTip')
     .setDescription(
-      'Application to manage the registration of users',
+      'Application to manage the registration of new partners/collaborators',
     )
     .setVersion('1.0.0')
     .addTag('status')

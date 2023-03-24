@@ -1,26 +1,83 @@
+# Login Platform with NestJS
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Overview
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is a login platform built with NestJS. It provides an authentication system with JWT and roles-based authorization, as well as features such as password recovery with Nodemailer and the ability to store data on Amazon S3. The project uses Docker for containerization and Prisma as the ORM to interact with a PostgreSQL database.
+
+The platform consists of the following modules:
+
+- `auth`: module that handles authentication and authorization.
+- `user`: module that allows admins to register users and collaborators.
+- `shared`: module containing shared resources such as middleware and decorators.
+
+The architecture of the platform follows a clean architecture approach and uses repository pattern to access the database.
+
+The API is documented with Swagger and has unit tests.
+
+## Technologies
+
+The following technologies are used in this project:
+
+- Node.js
+- NestJS
+- PostgreSQL
+- Prisma
+- Docker
+- Amazon S3
+- JWT
+- Nodemailer
+- Swagger
+
+## Installation
+
+1. Clone the repository:
+
+git clone https://github.com/LyoDekken/docker-nestjs.git
+
+2. Install dependencies:
+
+npm install
+
+3. Start the application:
+
+npm run start:dev
+
+4. Access the API at `http://localhost:3000`.
+
+## Usage
+
+Refer to the API documentation provided by Swagger at `http://localhost:3333/docs` for instructions on how to use the API.
+
+## Docker and Docker Compose
+
+This project includes a `Dockerfile` and `docker-compose.yml` file for easy containerization and deployment. Here are the most common Docker and Docker Compose commands you may want to use:
+
+- `docker build -t your-image-name .`: Build a Docker image for the project. Replace `your-image-name` with a name for your image.
+- `docker run your-image-name`: Run a container based on the built image. Replace `your-image-name` with the name you used when building the image. You can change the port number if necessary.
+
+If you want to use Docker Compose, follow these commands:
+
+- `docker compose build`: Build the services defined in the `docker-compose.yml` file.
+- `docker compose up`: Run the services defined in the `docker-compose.yml` file.
+
+To stop and remove containers, networks, and volumes defined in the `docker-compose.yml` file, run:
+
+```sh
+docker-compose down
+```
+
+For more information on Docker and Docker Compose, refer to the official documentation:
+
+- [Docker](https://docs.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
 
 ## Description
 
@@ -68,6 +125,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](LICENSE).

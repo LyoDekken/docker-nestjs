@@ -30,7 +30,7 @@ export class AuthService {
       throw new UnauthorizedException('Usuário e/ou senha inválidos!');
     }
 
-    delete user.password;
+    delete user.password && user.createdAt && user.updatedAt;
 
     return {
       token: this.jwtService.sign({ email }),
